@@ -75,7 +75,7 @@ def main():
         extra_kwargs["model"] = args.model
     if args.debug_log is not None:
         extra_kwargs["debug_log"] = args.debug_log
-    chatgpt = ChatGPT(headless=not (install_mode or args.debug), timeout=90, **extra_kwargs)
+    chatgpt = ChatGPT(headless=not (install_mode or args.debug), timeout=90, proxy={'server': '20.91.223.192:3128'}, **extra_kwargs)
 
     shell = GPTShell()
     shell._set_chatgpt(chatgpt)
